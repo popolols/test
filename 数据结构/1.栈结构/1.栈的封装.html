@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Stack(){
+        // 栈的属性
+        this.items=[]
+        // 栈的相关操作
+        // 1.压栈
+        Stack.prototype.push=function (i) {
+            return this.items.push(i)
+        }
+        // 2.出栈
+        Stack.prototype.pop=function(){
+            return this.items.pop()
+        }
+        // 3.查看栈顶元素
+        Stack.prototype.peak=function(){
+            return this.items[this.items.length-1]
+        }
+        // 4.判断栈是否为空
+        Stack.prototype.isEmpty=function(){
+            return this.items.length===0
+        }
+        // 5.获取栈中元素个数
+        Stack.prototype.size=function(){
+            return this.items.length
+        }
+        // 6。tostring方法
+        Stack.prototype.toString=function(){
+            return this.items.join(' ')
+        }
+    }
+
+    // 栈的使用
+    const s=new Stack()
+    // 100 转二进制
+    function binTwo(num) {
+        const arr=[];
+        while(num>0){
+            let a=num%2;
+            arr.push(a);
+            num=Math.floor(num/2);
+            // console.log(a)
+        }
+        // const a=[]
+        // a=arr.reverse()
+        return arr.reverse().join('')
+    }
+    
+    console.log(binTwo(2));
+    console.log(binTwo(1));
+    console.log(binTwo(100));
+
+</script>
+</html>
